@@ -1,0 +1,17 @@
+<%- include('../partials/head') %>
+<body>
+  <%- include('../partials/header') %>
+  <%- include('../partials/nav') %>
+
+  <main>
+    <% if (siteTitle && content) { %>
+      <h1><%= siteTitle %></h1>
+      <p><%= content %></p>
+      <img src="/images/background.jpeg" alt="Sample">
+    <% } else { %>
+      <p>Content not found</p>
+    <% } %>
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>

@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <p><%= content %></p>
+
+  <% if (typeof subpages !== 'undefined' && subpages.length > 0) { %>
+    <ul>
+      <% subpages.forEach(function(sub) { %>
+        <li><a href="<%= sub.link %>"><%= sub.title %></a></li>
+      <% }); %>
+    </ul>
+  <% } %>
+</main>
+
+<%- include('../partials/footer') %>
