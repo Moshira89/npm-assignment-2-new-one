@@ -5,7 +5,8 @@ router.get('/', (req, res) => {
   res.render('pages/page', {
     siteTitle: 'Page 2',
     title: 'Page 2',
-    content: 'Welcome to Page 2!',
+    bodyClass: 'page2',
+    content: 'Welcome to Page 2',
     subpages: [
       { title: 'Subpage 1', link: '/page2/subpage1' },
       { title: 'Subpage 2', link: '/page2/subpage2' }
@@ -14,20 +15,20 @@ router.get('/', (req, res) => {
 });
 
 router.get('/subpage1', (req, res) => {
-  res.render('pages/page', {
+  res.render('pages/subpage1', {
     siteTitle: 'Page 2 - Subpage 1',
     title: 'Subpage 1',
-    content: 'This is Subpage 1 of Page 2',
-    subpages: []
+    bodyClass: 'subpage1',
+    content: 'This is subpage 1 under Page 2.'
   });
 });
 
 router.get('/subpage2', (req, res) => {
-  res.render('pages/page', {
+  res.render('pages/subpage2', {
     siteTitle: 'Page 2 - Subpage 2',
     title: 'Subpage 2',
-    content: 'This is Subpage 2 of Page 2',
-    subpages: []
+    bodyClass: 'subpage2',
+    content: 'This is subpage 2 under Page 2.'
   });
 });
 

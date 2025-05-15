@@ -1,17 +1,26 @@
-<%- include('../partials/header') %>
-<%- include('../partials/nav') %>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head', { title: title }) %>
 
-<main>
-  <h1><%= title %></h1>
-  <p><%= content %></p>
+  <body class="<%= typeof bodyClass !== 'undefined' ? bodyClass : '' %>">
+    <%- include('../partials/header', { title: title }) %>
+    <%- include('../partials/nav') %>
 
-  <% if (typeof subpages !== 'undefined' && subpages.length > 0) { %>
-    <ul>
-      <% subpages.forEach(function(sub) { %>
-        <li><a href="<%= sub.link %>"><%= sub.title %></a></li>
-      <% }); %>
-    </ul>
-  <% } %>
-</main>
+    <main>
+      <h2><%= typeof title !== 'undefined' ? title : 'Untitled Page' %></h2>
+      <p><%= typeof content !== 'undefined' ? content : '' %></p>
+      <img src="/images/background.jpeg" alt="Description of page 1 image" class="responsive-img" />
 
-<%- include('../partials/footer') %>
+
+      <% if (subpages && subpages.length > 0) { %>
+        <ul>
+          <% subpages.forEach(function(sub) { %>
+            <li><a href="<%= sub.link %>"><%= sub.title %></a></li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

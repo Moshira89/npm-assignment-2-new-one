@@ -1,6 +1,22 @@
-<%- include('../../partials/head') %>
-<body>
-  <%- include('../../partials/header') %>
-  <h1><%= siteTitle %></h1>
-  <p><%= content %></p>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head', { title: 'Subpage 2' }) %>
+  <body class="subpage2">
+
+    <%- include('../partials/header', { title: 'Subpage 2' }) %>
+    <%- include('../partials/nav') %>
+
+    <main>
+      <h2>Subpage 2</h2>
+      <p>This is subpage 2 under Page 1.</p>
+
+      <div class="back-links">
+        <a href="/">Back to Home</a> |
+        <a href="/page1">Back to Page 1</a> |
+        <a href="/page2">Back to Page 2</a>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
